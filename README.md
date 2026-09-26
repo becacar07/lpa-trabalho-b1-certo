@@ -11,9 +11,11 @@ Organização da solução
 O programa é dividido em funções: leitura dos dados, cálculo do valor da entrega e resumo. A main só faz o desenvolvimento do código.
 
 Compilação
+
 gcc -o sim main.c
 
 Execução
+
 ./sim
 
 Uso de Inteligência Artificial
