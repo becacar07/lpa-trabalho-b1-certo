@@ -20,7 +20,7 @@ Execução
 
 Uso de Inteligência Artificial
 
-Usei o Claude (Opus 5.5), usei ele para me explicar o processamento lógico do código, e destrinchar seu documento e a cada commit eu pedia para ele corrigir.
+Usei o Claude (Opus 5.5), usei ele para me explicar o processamento lógico do código, e destrinchar seu documento e a cada commit eu pedia para ele corrigir. A única parte que ele teve que fazer mesmo, para eu entender foi a parte de modularização.
 
 Fontes consultadas
 
