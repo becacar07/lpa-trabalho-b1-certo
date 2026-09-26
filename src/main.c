@@ -155,15 +155,16 @@ int main(void) {
             }
         }
 
-        printf("Deseja processar outra entrega? 1-Sim, 0-Nao: ");
+              printf("Deseja processar outra entrega? 1-Sim, 0-Nao: ");
         scanf("%d", &continuar);
         while (continuar != 0 && continuar != 1) {
             printf("Valor invalido. Digite 1 ou 0: ");
             scanf("%d", &continuar);
         }
-            exibirResumo(total_entregas, soma_valores, qtd_economica, qtd_expressa, qtd_prioritaria, maior_valor, menor_valor);
+
+    } while (continuar == 1);
+
+    exibirResumo(total_entregas, soma_valores, qtd_economica, qtd_expressa, qtd_prioritaria, maior_valor, menor_valor);
 
     return 0;
 }
-
-    } while (continuar == 1);
