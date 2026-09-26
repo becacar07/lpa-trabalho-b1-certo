@@ -1,16 +1,32 @@
 #include <stdio.h>
 
+const double VALOR_BASE_FAIXA1 = 8.00;
+const double VALOR_BASE_FAIXA2 = 12.00;
+const double VALOR_BASE_FAIXA3 = 18.00;
+const double VALOR_BASE_FAIXA4 = 25.00;
+const double VALOR_POR_KM = 1.20;
+
+const double ADICIONAL_PESO_5 = 0.05;
+const double ADICIONAL_PESO_10 = 0.10;
+const double ADICIONAL_PESO_ACIMA_10 = 0.20;
+
+const double ADICIONAL_EXPRESSA = 0.15;
+const double ADICIONAL_PRIORITARIA = 0.30;
+
+const double VALOR_PROTECAO = 7.50;
+const double VALOR_TENTATIVA_ADICIONAL = 4.00;
+
 double identificarValorBase(double distancia) {
     double valor_base;
 
     if (distancia <= 5) {
-        valor_base = 8.00;
+        valor_base = VALOR_BASE_FAIXA1;
     } else if (distancia <= 15) {
-        valor_base = 12.00;
+        valor_base = VALOR_BASE_FAIXA2;
     } else if (distancia <= 30) {
-        valor_base = 18.00;
+        valor_base = VALOR_BASE_FAIXA3;
     } else {
-        valor_base = 25.00;
+        valor_base = VALOR_BASE_FAIXA4;
     }
 
     return valor_base;
@@ -22,11 +38,11 @@ double calcularAdicionalPeso(double peso, double subtotal) {
     if (peso <= 2) {
         adicional_peso = 0;
     } else if (peso <= 5) {
-        adicional_peso = subtotal * 0.05;
+        adicional_peso = subtotal * ADICIONAL_PESO_5;
     } else if (peso <= 10) {
-        adicional_peso = subtotal * 0.10;
+        adicional_peso = subtotal * ADICIONAL_PESO_10;
     } else {
-        adicional_peso = subtotal * 0.20;
+        adicional_peso = subtotal * ADICIONAL_PESO_ACIMA_10;
     }
 
     return adicional_peso;
@@ -38,9 +54,9 @@ double calcularAdicionalModalidade(int modalidade, double subtotal) {
     if (modalidade == 1) {
         adicional_modalidade = 0;
     } else if (modalidade == 2) {
-        adicional_modalidade = subtotal * 0.15;
+        adicional_modalidade = subtotal * ADICIONAL_EXPRESSA;
     } else {
-        adicional_modalidade = subtotal * 0.30;
+        adicional_modalidade = subtotal * ADICIONAL_PRIORITARIA;
     }
 
     return adicional_modalidade;
@@ -90,7 +106,7 @@ int main(void) {
         }
 
         valor_base = identificarValorBase(distancia);
-        subtotal = valor_base + (distancia * 1.20);
+        subtotal = valor_base + (distancia * VALOR_POR_KM);
 
         printf("Digite o peso da entrega: ");
         scanf("%lf", &peso);
@@ -115,7 +131,7 @@ int main(void) {
             scanf("%d", &protecao);
         }
         if (protecao == 1) {
-            valor_protecao = 7.50;
+            valor_protecao = VALOR_PROTECAO;
         } else {
             valor_protecao = 0;
         }
@@ -126,7 +142,7 @@ int main(void) {
             printf("Valor invalido. Digite um numero maior ou igual a zero: ");
             scanf("%d", &tentativas);
         }
-        valor_tentativas = tentativas * 4.00;
+        valor_tentativas = tentativas * VALOR_TENTATIVA_ADICIONAL;
 
         valor_final = subtotal + adicional_peso + adicional_modalidade + valor_protecao + valor_tentativas;
 
@@ -155,7 +171,7 @@ int main(void) {
             }
         }
 
-              printf("Deseja processar outra entrega? 1-Sim, 0-Nao: ");
+        printf("Deseja processar outra entrega? 1-Sim, 0-Nao: ");
         scanf("%d", &continuar);
         while (continuar != 0 && continuar != 1) {
             printf("Valor invalido. Digite 1 ou 0: ");
