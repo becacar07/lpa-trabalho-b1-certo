@@ -56,9 +56,32 @@ int main(void) {
     } else {
         adicional_modalidade = subtotal * 0.30;
     }
+      printf("Deseja contratar protecao? 1-Sim, 0-Nao: ");
+    scanf("%d", &protecao);
+    while (protecao != 0 && protecao != 1) {
+        printf("Valor invalido. Digite 1 ou 0: ");
+        scanf("%d", &protecao);
+    }
+    if (protecao == 1) {
+        valor_protecao = 7.50;
+    } else {
+        valor_protecao = 0;
+    }
+
+    printf("Quantas tentativas adicionais? ");
+    scanf("%d", &tentativas);
+    while (tentativas < 0) {
+        printf("Valor invalido.");
+        scanf("%d", &tentativas);
+    }
+    valor_tentativas = tentativas * 4.00;
+
+    valor_final = subtotal + adicional_peso + adicional_modalidade + valor_protecao + valor_tentativas;
+
     printf("Subtotal inicial: R$ %.2f\n", subtotal);
     printf("Adicional de modalidade: R$ %.2f\n", adicional_modalidade);
     printf("Adicional de peso: R$ %.2f\n", adicional_peso);
-     
+    printf("Valor final da entrega: R$ %.2f\n", valor_final);
+  
 return 0;
 }
