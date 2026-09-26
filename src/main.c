@@ -36,7 +36,23 @@ int main(void) {
     } else {
         adicional_peso = subtotal * 0.20;
     }
+    printf("Digite a modalidade: 1-Economica, 2-Expressa e 3-Prioritaria ");
+    scanf("%d", &modalidade);
+    while (modalidade != 1 && modalidade != 2 && modalidade != 3) {
+        printf("Modalidade invalida. Digite 1, 2 ou 3: ");
+        scanf("%d", &modalidade);
+    }
+    
+    if (modalidade == 1) {
+        adicional_modalidade = 0;
+    } else if (modalidade == 2) {
+        adicional_modalidade = subtotal * 0.15;
+    } else {
+        adicional_modalidade = subtotal * 0.30;
+    }
+    printf("Subtotal inicial: R$ %.2f\n", subtotal);
+    printf("Adicional de modalidade: R$ %.2f\n", adicional_modalidade);
     printf("Adicional de peso: R$ %.2f\n", adicional_peso);
      
-
+return 0;
 }
