@@ -2,6 +2,12 @@
 
 int main(void) {
     double distancia;
+    double valor_base;
+    double subtotal;
+    double peso;
+    double adicional_peso;
+    int modalidade;
+    double adicional_modalidade;
 
     printf("Digite a distancia da entrega: ");
     scanf("%lf", &distancia);
