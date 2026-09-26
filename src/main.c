@@ -8,6 +8,8 @@ int main(void) {
     double adicional_peso;
     int modalidade;
     double adicional_modalidade;
+    double valor_tentativas;
+    double valor_final;
 
     printf("Digite a distancia da entrega: ");
     scanf("%lf", &distancia);
