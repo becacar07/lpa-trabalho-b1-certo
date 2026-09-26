@@ -19,7 +19,9 @@ Execução
 ./sim
 
 Uso de Inteligência Artificial
+
 Usei o Claude (Opus 5.5), usei ele para me explicar o processamento lógico do código, e destrinchar seu documento e a cada commit eu pedia para ele corrigir.
 
 Fontes consultadas
+
 Suas apostilas e do professor Sidney (Pratica Profissional 2) foram utilizadas para fazer a lógica e o código respectivamente. 
