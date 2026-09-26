@@ -84,6 +84,16 @@ int main(void) {
     printf("Adicional de modalidade: R$ %.2f\n", adicional_modalidade);
     printf("Adicional de peso: R$ %.2f\n", adicional_peso);
     printf("Valor final da entrega: R$ %.2f\n", valor_final);
+
+      printf("Deseja processar outra entrega? 1-Sim, 0-Nao: ");
+        scanf("%d", &continuar);
+        while (continuar != 0 && continuar != 1) {
+            printf("Valor invalido. Digite 1 ou 0: ");
+            scanf("%d", &continuar);
+        }
+
+    } 
+
   
 return 0;
 }
