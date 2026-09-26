@@ -12,7 +12,7 @@ int main(void) {
 
     if (distancia <= 5) {
         valor_base = 8.00;
-    } if (distancia <= 15) {
+    } else if (distancia <= 15) {
         valor_base = 12.00;
     } else if (distancia <= 30) {
         valor_base = 18.00;
@@ -21,7 +21,22 @@ int main(void) {
     }
 
     subtotal = valor_base + (distancia * 1.20);
-
-    printf("Subtotal inicial: R$ %.2f", subtotal);
+     printf("Digite o peso da entrega: ");
+    scanf("%lf", &peso);
+    while (peso <= 0) {
+        printf("Peso invalido. Digite outro: ");
+        scanf("%lf", &peso);
+    }
+    if (peso <= 2) {
+        adicional_peso = 0;
+    } else if (peso <= 5) {
+        adicional_peso = subtotal * 0.05;
+    } else if (peso <= 10) {
+        adicional_peso = subtotal * 0.10;
+    } else {
+        adicional_peso = subtotal * 0.20;
+    }
+    printf("Adicional de peso: R$ %.2f\n", adicional_peso);
+     
 
 }
